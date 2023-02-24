@@ -36,6 +36,7 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.Cancella = new System.Windows.Forms.Button();
             this.Modifica = new System.Windows.Forms.Button();
+            this.Visualizza = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox1
@@ -75,7 +76,7 @@
             // 
             // Salva
             // 
-            this.Salva.Location = new System.Drawing.Point(91, 136);
+            this.Salva.Location = new System.Drawing.Point(35, 136);
             this.Salva.Name = "Salva";
             this.Salva.Size = new System.Drawing.Size(75, 23);
             this.Salva.TabIndex = 4;
@@ -96,7 +97,7 @@
             // 
             // Cancella
             // 
-            this.Cancella.Location = new System.Drawing.Point(225, 135);
+            this.Cancella.Location = new System.Drawing.Point(154, 136);
             this.Cancella.Name = "Cancella";
             this.Cancella.Size = new System.Drawing.Size(75, 23);
             this.Cancella.TabIndex = 6;
@@ -106,18 +107,29 @@
             // 
             // Modifica
             // 
-            this.Modifica.Location = new System.Drawing.Point(347, 134);
+            this.Modifica.Location = new System.Drawing.Point(272, 136);
             this.Modifica.Name = "Modifica";
             this.Modifica.Size = new System.Drawing.Size(75, 23);
             this.Modifica.TabIndex = 7;
             this.Modifica.Text = "Modifica";
             this.Modifica.UseVisualStyleBackColor = true;
             // 
+            // Visualizza
+            // 
+            this.Visualizza.Location = new System.Drawing.Point(390, 136);
+            this.Visualizza.Name = "Visualizza";
+            this.Visualizza.Size = new System.Drawing.Size(75, 23);
+            this.Visualizza.TabIndex = 8;
+            this.Visualizza.Text = "Visualizza";
+            this.Visualizza.UseVisualStyleBackColor = true;
+            this.Visualizza.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Visualizza);
             this.Controls.Add(this.Modifica);
             this.Controls.Add(this.Cancella);
             this.Controls.Add(this.listView1);
@@ -143,6 +155,7 @@
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Button Cancella;
         private System.Windows.Forms.Button Modifica;
+        private System.Windows.Forms.Button Visualizza;
     }
 }
 

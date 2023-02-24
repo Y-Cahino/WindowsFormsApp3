@@ -35,7 +35,7 @@ namespace WindowsFormsApp3
             p[d].nome = textBox1.Text;
             p[d].prezzo = float.Parse(textBox2.Text);
             d++;
-            visualizza(p);
+            vis(p);
             
         }
         public string proString(Prodotto p)
@@ -60,11 +60,25 @@ namespace WindowsFormsApp3
 
         private void button2_Click(object sender, EventArgs e)
         {
+            if(search(textBox1) == true)
+            {
+                cancella(p);
+            } else
+            {
 
+            }  
+        }
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            for(int i=0;i<d;i++)
+            {
+                vis(p);
+            }
         }
 
         //funzioni di servizio
-        public void visualizza(Prodotto[] pp)
+        //funzione visualizza
+        public void vis(Prodotto[] pp)
         {
             listView1.Items.Clear();
             for (int i = 0; i < d; i++)
@@ -73,23 +87,37 @@ namespace WindowsFormsApp3
             }
 
         }
-        public static bool cancella(Prodotto[] pp, string nome, ref int d)
+        //ricerca sequenziale
+        public static bool search(string nome, Prodotto[] p, ref int d)
         {
-            bool esiste = false;
+            bool esiste = true;
             for(int i = 0; i < d; i++)
             {
-                if (pp[i].nome == nome)
+                if(p[i].nome==nome)
                 {
-                    d--;
-                    for(int j = i; j < pp.Length - 1; j++)
-                    {
-                        pp[i] = pp[i + 1];
-                    }
                     esiste = true;
                     break;
                 }
+                esiste = false;
             }
-            return esiste; 
+            return esiste;
         }
+        //funzione cancellazione
+        public static void cancella(Prodotto[]p, string nome, ref int d)
+        {
+            for(int i = 0; i < d; i++)
+            {
+                if (p[i].nome == nome)
+                {
+                    for(int j = i; j < p.Length - 1; j++)
+                    {
+                        p[i] = p[i + 1];
+                    }
+                    d--;
+                }
+            }
+        }
+
+        
     }
 }
