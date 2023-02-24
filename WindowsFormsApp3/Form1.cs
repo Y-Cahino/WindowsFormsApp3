@@ -22,7 +22,7 @@ namespace WindowsFormsApp3
         public Form1()
         {
             InitializeComponent();
-            p=new Prodotto[3];
+            p=new Prodotto[100];
             d=0;
         }
         private void label1_Click(object sender, EventArgs e)
@@ -35,6 +35,7 @@ namespace WindowsFormsApp3
             p[d].nome = textBox1.Text;
             p[d].prezzo = float.Parse(textBox2.Text);
             d++;
+            visualizza(p);
             
         }
         public string proString(Prodotto p)
