@@ -73,5 +73,23 @@ namespace WindowsFormsApp3
             }
 
         }
+        public static bool cancella(Prodotto[] pp, string nome, ref int d)
+        {
+            bool esiste = false;
+            for(int i = 0; i < d; i++)
+            {
+                if (pp[i].nome == nome)
+                {
+                    d--;
+                    for(int j = i; j < pp.Length - 1; j++)
+                    {
+                        pp[i] = pp[i + 1];
+                    }
+                    esiste = true;
+                    break;
+                }
+            }
+            return esiste; 
+        }
     }
 }
