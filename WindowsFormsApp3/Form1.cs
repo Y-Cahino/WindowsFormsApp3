@@ -42,15 +42,7 @@ namespace WindowsFormsApp3
         {
             return "Nome:" + p.nome + "Prezzo:" + p.prezzo.ToString();
         }
-        public void visualizza(Prodotto[] pp)
-        {
-            listView1.Items.Clear();
-            for (int i = 0; i < d; i++)
-            {
-                listView1.Items.Add(proString(p[i]));
-            }
-            
-        }
+        
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -63,6 +55,22 @@ namespace WindowsFormsApp3
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //funzioni di servizio
+        public void visualizza(Prodotto[] pp)
+        {
+            listView1.Items.Clear();
+            for (int i = 0; i < d; i++)
+            {
+                listView1.Items.Add(proString(p[i]));
+            }
 
         }
     }
