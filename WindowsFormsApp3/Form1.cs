@@ -60,9 +60,10 @@ namespace WindowsFormsApp3
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if(search(textBox1) == true)
+            if(search(p, textBox1.Text))
             {
-                cancella(p);
+                cancella(p, textBox1.Text, ref d);
+                vis(p);
             } else
             {
 
@@ -88,10 +89,10 @@ namespace WindowsFormsApp3
 
         }
         //ricerca sequenziale
-        public static bool search(string nome, Prodotto[] p, ref int d)
+        public static bool search(Prodotto[] p, string nome)
         {
             bool esiste = true;
-            for(int i = 0; i < d; i++)
+            for(int i = 0; i < p.Length; i++)
             {
                 if(p[i].nome==nome)
                 {
