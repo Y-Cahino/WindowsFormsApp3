@@ -17,8 +17,8 @@ namespace WindowsFormsApp3
             public float prezzo;
             public string nome;
         }
-        public Prodotto[] p;
-        public int d;
+        public static Prodotto[] p;
+        public static int d;
         public Form1()
         {
             InitializeComponent();
@@ -57,17 +57,23 @@ namespace WindowsFormsApp3
         {
 
         }
+        private void Modifica_Click(object sender, EventArgs e)
+        {
+            if (search(p, textBox1.Text))
+            {
+                cancella(p, textBox1.Text, ref d);
+
+                vis(p);
+            }
+        }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if(search(p, textBox1.Text))
+            if (search(p, textBox1.Text))
             {
                 cancella(p, textBox1.Text, ref d);
                 vis(p);
-            } else
-            {
-
-            }  
+            }
         }
         private void button1_Click_1(object sender, EventArgs e)
         {
@@ -89,19 +95,20 @@ namespace WindowsFormsApp3
 
         }
         //ricerca sequenziale
-        public static bool search(Prodotto[] p, string nome)
+        public static void search(Prodotto[] p, string nome)
         {
-            bool esiste = true;
-            for(int i = 0; i < p.Length; i++)
+            int pos;
+            for(int i=0; i<d; i++)
             {
-                if(p[i].nome==nome)
+                if(p[i].nome == nome)
                 {
-                    esiste = true;
-                    break;
+                    pos = i;
+                    return;
                 }
-                esiste = false;
+                pos = -1;
+                break;
             }
-            return esiste;
+            
         }
         //funzione cancellazione
         public static void cancella(Prodotto[]p, string nome, ref int d)
@@ -118,7 +125,12 @@ namespace WindowsFormsApp3
                 }
             }
         }
+        //funzione di modifica
+        private static void aggiungi(Prodotto[]p,string nome, int pos, float prezzo)
+        {
+            p[pos].nome= nome;
+            p[pos].prezzo= prezzo;
+        }
 
-        
     }
 }

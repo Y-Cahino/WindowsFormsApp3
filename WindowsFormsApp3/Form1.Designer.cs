@@ -86,9 +86,11 @@
             // 
             // listView1
             // 
+            this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(567, 50);
             this.listView1.Name = "listView1";
+            this.listView1.Scrollable = false;
             this.listView1.Size = new System.Drawing.Size(206, 285);
             this.listView1.TabIndex = 5;
             this.listView1.UseCompatibleStateImageBehavior = false;
@@ -113,6 +115,7 @@
             this.Modifica.TabIndex = 7;
             this.Modifica.Text = "Modifica";
             this.Modifica.UseVisualStyleBackColor = true;
+            this.Modifica.Click += new System.EventHandler(this.Modifica_Click);
             // 
             // Visualizza
             // 
