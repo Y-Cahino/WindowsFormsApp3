@@ -33,7 +33,7 @@ namespace WindowsFormsApp3
         private void button1_Click(object sender, EventArgs e)
         {
             p[d].nome = textBox1.Text;
-            p[d].prezzo = float.Parse(textBox2.Text);
+            p[d].prezzo = textBox2.Text;
             d++;
             vis(p);
             
@@ -59,21 +59,19 @@ namespace WindowsFormsApp3
         }
         private void Modifica_Click(object sender, EventArgs e)
         {
-            if (search(p, textBox1.Text))
-            {
-                cancella(p, textBox1.Text, ref d);
-
-                vis(p);
-            }
+            int pos;
+            pos = search(p, textBox1.Text);
+            cancella(p, textBox1.Text, ref d);
+           
+            vis(p);
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (search(p, textBox1.Text))
-            {
-                cancella(p, textBox1.Text, ref d);
-                vis(p);
-            }
+            search(p, textBox1.Text);
+            cancella(p, textBox1.Text, ref d);
+            vis(p);
         }
         private void button1_Click_1(object sender, EventArgs e)
         {
@@ -81,6 +79,11 @@ namespace WindowsFormsApp3
             {
                 vis(p);
             }
+        }
+        private void Somma_Click(object sender, EventArgs e)
+        {
+            som(p);
+            vis(p);
         }
 
         //funzioni di servizio
@@ -94,8 +97,8 @@ namespace WindowsFormsApp3
             }
 
         }
-        //ricerca sequenziale
-        public static void search(Prodotto[] p, string nome)
+        //ricerca reale
+        int search(Prodotto[] p, string nome)
         {
             int pos;
             for(int i=0; i<d; i++)
@@ -103,12 +106,13 @@ namespace WindowsFormsApp3
                 if(p[i].nome == nome)
                 {
                     pos = i;
-                    return;
+                    return pos;
                 }
-                pos = -1;
-                break;
+                
             }
-            
+            pos = -1;
+            return pos;
+
         }
         //funzione cancellazione
         public static void cancella(Prodotto[]p, string nome, ref int d)
@@ -126,11 +130,20 @@ namespace WindowsFormsApp3
             }
         }
         //funzione di modifica
-        private static void aggiungi(Prodotto[]p,string nome, int pos, float prezzo)
+        private static void aggiungi(Prodotto[]p,string nome, int pos, string prezzo)
         {
             p[pos].nome= nome;
-            p[pos].prezzo= prezzo;
+            p[pos].prezzo= prezzo.ToString();
         }
 
+        //funzione somma
+        public static void som(Prodotto[]p)
+        {
+            for (int i = 0; i < d; i++)
+            {
+               int x = int.Parse(p[i].prezzo.Sum());
+            }
+        }
+       
     }
 }

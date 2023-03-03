@@ -37,6 +37,7 @@
             this.Cancella = new System.Windows.Forms.Button();
             this.Modifica = new System.Windows.Forms.Button();
             this.Visualizza = new System.Windows.Forms.Button();
+            this.Somma = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox1
@@ -127,11 +128,22 @@
             this.Visualizza.UseVisualStyleBackColor = true;
             this.Visualizza.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // Somma
+            // 
+            this.Somma.Location = new System.Drawing.Point(35, 204);
+            this.Somma.Name = "Somma";
+            this.Somma.Size = new System.Drawing.Size(75, 23);
+            this.Somma.TabIndex = 9;
+            this.Somma.Text = "Somma";
+            this.Somma.UseVisualStyleBackColor = true;
+            this.Somma.Click += new System.EventHandler(this.Somma_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Somma);
             this.Controls.Add(this.Visualizza);
             this.Controls.Add(this.Modifica);
             this.Controls.Add(this.Cancella);
@@ -159,6 +171,7 @@
         private System.Windows.Forms.Button Cancella;
         private System.Windows.Forms.Button Modifica;
         private System.Windows.Forms.Button Visualizza;
+        private System.Windows.Forms.Button Somma;
     }
 }
 
