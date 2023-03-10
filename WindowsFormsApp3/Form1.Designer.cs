@@ -32,13 +32,15 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.Salva = new System.Windows.Forms.Button();
+            this.Save = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
             this.Cancella = new System.Windows.Forms.Button();
             this.Modifica = new System.Windows.Forms.Button();
             this.Visualizza = new System.Windows.Forms.Button();
             this.Somma = new System.Windows.Forms.Button();
             this.Percentuale = new System.Windows.Forms.Button();
+            this.maxs = new System.Windows.Forms.Button();
+            this.mini = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox1
@@ -76,15 +78,15 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Prezzo";
             // 
-            // Salva
+            // Save
             // 
-            this.Salva.Location = new System.Drawing.Point(35, 136);
-            this.Salva.Name = "Salva";
-            this.Salva.Size = new System.Drawing.Size(75, 23);
-            this.Salva.TabIndex = 4;
-            this.Salva.Text = "Salva";
-            this.Salva.UseVisualStyleBackColor = true;
-            this.Salva.Click += new System.EventHandler(this.button1_Click);
+            this.Save.Location = new System.Drawing.Point(35, 136);
+            this.Save.Name = "Save";
+            this.Save.Size = new System.Drawing.Size(75, 23);
+            this.Save.TabIndex = 4;
+            this.Save.Text = "Salva";
+            this.Save.UseVisualStyleBackColor = true;
+            this.Save.Click += new System.EventHandler(this.button1_Click);
             // 
             // listView1
             // 
@@ -149,18 +151,40 @@
             this.Percentuale.UseVisualStyleBackColor = true;
             this.Percentuale.Click += new System.EventHandler(this.Percentuale_Click);
             // 
+            // maxs
+            // 
+            this.maxs.Location = new System.Drawing.Point(272, 203);
+            this.maxs.Name = "maxs";
+            this.maxs.Size = new System.Drawing.Size(75, 23);
+            this.maxs.TabIndex = 11;
+            this.maxs.Text = "Massimo";
+            this.maxs.UseVisualStyleBackColor = true;
+            this.maxs.Click += new System.EventHandler(this.maxs_Click);
+            // 
+            // mini
+            // 
+            this.mini.Location = new System.Drawing.Point(390, 203);
+            this.mini.Name = "mini";
+            this.mini.Size = new System.Drawing.Size(75, 23);
+            this.mini.TabIndex = 12;
+            this.mini.Text = "Minimo";
+            this.mini.UseVisualStyleBackColor = true;
+            this.mini.Click += new System.EventHandler(this.mini_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.mini);
+            this.Controls.Add(this.maxs);
             this.Controls.Add(this.Percentuale);
             this.Controls.Add(this.Somma);
             this.Controls.Add(this.Visualizza);
             this.Controls.Add(this.Modifica);
             this.Controls.Add(this.Cancella);
             this.Controls.Add(this.listView1);
-            this.Controls.Add(this.Salva);
+            this.Controls.Add(this.Save);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox2);
@@ -178,13 +202,15 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button Salva;
+        private System.Windows.Forms.Button Save;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Button Cancella;
         private System.Windows.Forms.Button Modifica;
         private System.Windows.Forms.Button Visualizza;
         private System.Windows.Forms.Button Somma;
         private System.Windows.Forms.Button Percentuale;
+        private System.Windows.Forms.Button maxs;
+        private System.Windows.Forms.Button mini;
     }
 }
 

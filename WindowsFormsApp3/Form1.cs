@@ -38,10 +38,7 @@ namespace WindowsFormsApp3
             vis(p);
             
         }
-        public string proString(Prodotto p)
-        {
-            return "Nome:" + p.nome + "Prezzo:" + p.prezzo.ToString();
-        }
+        
         
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -89,11 +86,29 @@ namespace WindowsFormsApp3
         private void Percentuale_Click(object sender, EventArgs e)
         {
             float x;
-            x = per(p);
+            x = float.Parse(per(p));
             listView1.Items.Add(Convert.ToString(x));
+        }
+        private void maxs_Click(object sender, EventArgs e)
+        {
+            float mas;
+            mas = float.Parse(max(p));
+            listView1.Items.Add(Convert.ToString(mas));
+        }
+
+        private void mini_Click(object sender, EventArgs e)
+        {
+            float minn;
+            minn = float.Parse(min(p));
+            listView1.Items.Add(Convert.ToString(minn));
         }
 
         //funzioni di servizio
+        //funzione aggiunta
+        public string proString(Prodotto p)
+        {
+            return "Nome: " + p.nome + "Prezzo: " + p.prezzo.ToString();
+        }
         //funzione visualizza
         public void vis(Prodotto[] pp)
         {
@@ -136,13 +151,6 @@ namespace WindowsFormsApp3
                 }
             }
         }
-        //funzione di modifica
-        private static void aggiungi(Prodotto[]p,string nome, int pos, string prezzo)
-        {
-            p[pos].nome= nome;
-            p[pos].prezzo= prezzo.ToString();
-        }
-
         //funzione somma
         public static float som(Prodotto[]p)
         {
@@ -154,7 +162,7 @@ namespace WindowsFormsApp3
             return x;
         }
        //funzione percentuale di sconto or sovrapprezzo
-       public static float per(Prodotto[]p)
+       public static string per(Prodotto[]p)
         {
             float x=som(p);
             for (int i = 0; i < d; i++)
@@ -168,7 +176,26 @@ namespace WindowsFormsApp3
                     x -= (x / 100) * float.Parse(p[i].prezzo);
                 }
             }
-            return x;
+            return ("Prezzo scontato: "+x);
+        }
+        //funzione massimo&minimo
+        public static string max(Prodotto[]p)
+        {
+            float mas = 0;
+            for (int i = 0; i < d; i++)
+            {
+                mas=p[i].prezzo.Max();
+            }
+            return ("Prezzo maggiore: "+mas);
+        }
+        public static string min(Prodotto[]p)
+        {
+            float minn = 0;
+            for (int i = 0; i < d; i++)
+            {
+                minn=p[i].prezzo.Min();
+            }
+            return ("Prezzo minore: " + minn);
         }
 
         
