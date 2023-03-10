@@ -14,7 +14,7 @@ namespace WindowsFormsApp3
     {
         public struct Prodotto
         {
-            public float prezzo;
+            public string prezzo;
             public string nome;
         }
         public static Prodotto[] p;
@@ -141,9 +141,9 @@ namespace WindowsFormsApp3
         {
             for (int i = 0; i < d; i++)
             {
-               int x = int.Parse(p[i].prezzo.Sum());
+               float x =+ float.Parse(p[i].prezzo);
             }
         }
-       
+       //funzione percentuale
     }
 }
