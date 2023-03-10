@@ -82,8 +82,9 @@ namespace WindowsFormsApp3
         }
         private void Somma_Click(object sender, EventArgs e)
         {
-            som(p);
-            vis(p);
+            float x;
+           x=som(p);
+            listView1.Items.Add(Convert.ToString(x));
         }
 
         //funzioni di servizio
@@ -137,13 +138,19 @@ namespace WindowsFormsApp3
         }
 
         //funzione somma
-        public static void som(Prodotto[]p)
+        public static float som(Prodotto[]p)
         {
+            float x = 0;
             for (int i = 0; i < d; i++)
             {
-               float x =+ float.Parse(p[i].prezzo);
+               x+=float.Parse(p[i].prezzo);
             }
+            return x;
         }
-       //funzione percentuale
+       //funzione percentuale di sconto or sovrapprezzo
+       public static void per()
+        {
+
+        }
     }
 }
