@@ -58,11 +58,9 @@ namespace WindowsFormsApp3
         {
             int pos;
             pos = search(p, textBox1.Text);
-            cancella(p, textBox1.Text, ref d);
-            cancella(p, textBox2.Text, ref d);
+            cancella(p, textBox1.Text, textBox2.Text);
             aggiunta(p,newn.Text,ref d);
             aggiunta(p,newpr.Text,ref d);
-            listView1.Items.Clear();
             vis(p);
             
         }
@@ -193,10 +191,9 @@ namespace WindowsFormsApp3
         //funzione massimo&minimo
         public string max(Prodotto[]p)
         {
-            float mas=0;
+            float mas = p[0].prezzo;
             for (int i = 0; i < d; i++)
             {
-                mas=p[0].prezzo;
                 if (p[i].prezzo > mas)
                 {
                     mas= p[i].prezzo;
@@ -206,10 +203,9 @@ namespace WindowsFormsApp3
         }
         public string min(Prodotto[]p)
         {
-            float minn = 0;
+            float minn = p[0].prezzo;
             for (int i = 0; i < d; i++)
             {
-                minn=p[0].prezzo;
                 if (p[i].prezzo > minn)
                 {
                     minn = p[i].prezzo;
