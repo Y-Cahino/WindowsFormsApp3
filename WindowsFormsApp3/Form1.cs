@@ -14,7 +14,7 @@ namespace WindowsFormsApp3
     {
         public struct Prodotto
         {
-            public string prezzo;
+            public float prezzo;
             public string nome;
         }
         public static Prodotto[] p;
@@ -33,7 +33,7 @@ namespace WindowsFormsApp3
         private void button1_Click(object sender, EventArgs e)
         {
             p[d].nome = textBox1.Text;
-            p[d].prezzo = textBox2.Text;
+            p[d].prezzo = float.Parse(textBox2.Text);
             d++;
             vis(p);
             
@@ -59,7 +59,7 @@ namespace WindowsFormsApp3
             int pos;
             pos = search(p, textBox1.Text);
             cancella(p, textBox1.Text, ref d);
-           
+            aggiunta(p,newn.Text, ref d);
             vis(p);
             
         }
@@ -102,6 +102,15 @@ namespace WindowsFormsApp3
             minn = float.Parse(min(p));
             listView1.Items.Add(Convert.ToString(minn));
         }
+        private void newn_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void newpr_TextChanged(object sender, EventArgs e)
+        {
+
+        }
 
         //funzioni di servizio
         //funzione aggiunta
@@ -137,7 +146,7 @@ namespace WindowsFormsApp3
 
         }
         //funzione cancellazione
-        public static void cancella(Prodotto[]p, string nome, ref int d)
+        public void cancella(Prodotto[]p, string nome, ref int d)
         {
             for(int i = 0; i < d; i++)
             {
@@ -152,52 +161,65 @@ namespace WindowsFormsApp3
             }
         }
         //funzione somma
-        public static float som(Prodotto[]p)
+        public float som(Prodotto[]p)
         {
             float x = 0;
             for (int i = 0; i < d; i++)
             {
-               x+=float.Parse(p[i].prezzo);
+               x+=p[i].prezzo;
             }
             return x;
         }
        //funzione percentuale di sconto or sovrapprezzo
-       public static string per(Prodotto[]p)
+       public string per(Prodotto[]p)
         {
             float x=som(p);
             for (int i = 0; i < d; i++)
             {
                 if (x < 0)
                 {
-                    x = (x / 100) * float.Parse(p[i].prezzo);
+                    x = (x / 100) * p[i].prezzo;
                 }
                 else
                 {
-                    x -= (x / 100) * float.Parse(p[i].prezzo);
+                    x -= (x / 100) * p[i].prezzo;
                 }
             }
             return ("Prezzo scontato: "+x);
         }
         //funzione massimo&minimo
-        public static string max(Prodotto[]p)
+        public string max(Prodotto[]p)
         {
-            float mas = 0;
+            float mas=0;
             for (int i = 0; i < d; i++)
             {
-                mas=p[i].prezzo.Max();
+                mas=p[0].prezzo;
+                if (p[i].prezzo > mas)
+                {
+                    mas= p[i].prezzo;
+                }
             }
             return ("Prezzo maggiore: "+mas);
         }
-        public static string min(Prodotto[]p)
+        public string min(Prodotto[]p)
         {
             float minn = 0;
             for (int i = 0; i < d; i++)
             {
-                minn=p[i].prezzo.Min();
+                minn=p[0].prezzo;
+                if (p[i].prezzo > minn)
+                {
+                    minn = p[i].prezzo;
+                }
             }
             return ("Prezzo minore: " + minn);
         }
 
-        
+        //funzione aggiunta
+        public void aggiunta(Prodotto []p)
+        {
+            p[d].nome = newn.Text;
+            p[d].prezzo = float.Parse(newpr.Text);
+        }
     }
 }

@@ -41,6 +41,10 @@
             this.Percentuale = new System.Windows.Forms.Button();
             this.maxs = new System.Windows.Forms.Button();
             this.mini = new System.Windows.Forms.Button();
+            this.newn = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.newpr = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBox1
@@ -113,7 +117,7 @@
             // 
             // Modifica
             // 
-            this.Modifica.Location = new System.Drawing.Point(272, 136);
+            this.Modifica.Location = new System.Drawing.Point(35, 280);
             this.Modifica.Name = "Modifica";
             this.Modifica.Size = new System.Drawing.Size(75, 23);
             this.Modifica.TabIndex = 7;
@@ -123,7 +127,7 @@
             // 
             // Visualizza
             // 
-            this.Visualizza.Location = new System.Drawing.Point(390, 136);
+            this.Visualizza.Location = new System.Drawing.Point(272, 136);
             this.Visualizza.Name = "Visualizza";
             this.Visualizza.Size = new System.Drawing.Size(75, 23);
             this.Visualizza.TabIndex = 8;
@@ -171,11 +175,49 @@
             this.mini.UseVisualStyleBackColor = true;
             this.mini.Click += new System.EventHandler(this.mini_Click);
             // 
+            // newn
+            // 
+            this.newn.Location = new System.Drawing.Point(154, 282);
+            this.newn.Name = "newn";
+            this.newn.Size = new System.Drawing.Size(100, 20);
+            this.newn.TabIndex = 13;
+            this.newn.TextChanged += new System.EventHandler(this.newn_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(154, 263);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(70, 13);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Nuovo Nome";
+            // 
+            // newpr
+            // 
+            this.newpr.Location = new System.Drawing.Point(344, 283);
+            this.newpr.Name = "newpr";
+            this.newpr.Size = new System.Drawing.Size(100, 20);
+            this.newpr.TabIndex = 15;
+            this.newpr.TextChanged += new System.EventHandler(this.newpr_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(344, 262);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(74, 13);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "Nuovo Prezzo";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.newpr);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.newn);
             this.Controls.Add(this.mini);
             this.Controls.Add(this.maxs);
             this.Controls.Add(this.Percentuale);
@@ -211,6 +253,10 @@
         private System.Windows.Forms.Button Percentuale;
         private System.Windows.Forms.Button maxs;
         private System.Windows.Forms.Button mini;
+        private System.Windows.Forms.TextBox newn;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox newpr;
+        private System.Windows.Forms.Label label4;
     }
 }
 
