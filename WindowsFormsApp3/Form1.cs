@@ -59,7 +59,10 @@ namespace WindowsFormsApp3
             int pos;
             pos = search(p, textBox1.Text);
             cancella(p, textBox1.Text, ref d);
-            aggiunta(p,newn.Text, ref d);
+            cancella(p, textBox2.Text, ref d);
+            aggiunta(p,newn.Text,ref d);
+            aggiunta(p,newpr.Text,ref d);
+            listView1.Items.Clear();
             vis(p);
             
         }
@@ -116,7 +119,7 @@ namespace WindowsFormsApp3
         //funzione aggiunta
         public string proString(Prodotto p)
         {
-            return "Nome: " + p.nome + "Prezzo: " + p.prezzo.ToString();
+            return "Nome: " + p.nome + " Prezzo: " + p.prezzo.ToString();
         }
         //funzione visualizza
         public void vis(Prodotto[] pp)
@@ -216,10 +219,19 @@ namespace WindowsFormsApp3
         }
 
         //funzione aggiunta
-        public void aggiunta(Prodotto []p)
+        public void aggiunta(Prodotto[] p, string nome, ref int d)
         {
-            p[d].nome = newn.Text;
-            p[d].prezzo = float.Parse(newpr.Text);
+            d++;
+            for (int i = 0; i < d; i++)
+            {
+                if (p[i].nome != nome)
+                {
+                    p[d].nome = newn.Text;
+                    p[d].prezzo = float.Parse(newpr.Text);
+                    
+                }
+            }
+            
         }
     }
 }
